@@ -1,0 +1,70 @@
+body{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  padding: 2em;
+}
+
+#wrapper{
+  height: 100%;
+}
+
+/* --- Welcome message --- */
+#welcome-message{
+  height: 10%;
+  height: 5em;
+}
+
+#welcome-message h1{
+  margin: 0;
+}
+
+#name{
+  text-align: left;
+}
+
+#time{
+  text-align: right;
+}
+
+/* --- Tab View --- */
+#tab-view{
+  height: 90%;
+  height: calc(100% - 5em);
+}
+
+#tabs{
+  width: 5%;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.tab{
+  width: 100%;
+  height: 5em;
+  position: relative;
+  float: left;
+  margin-bottom: 1em;
+}
+#tab1{
+  background: grey;
+}
+
+#tab2{
+  background: #d0d0d0;
+}
+
+#tab3{
+  background: #d0d0d0;
+}
+
+#viewpane{
+  width: 95%;
+  height: 100%;
+  position: relative;
+  float: left;
+  background: grey;
+}
