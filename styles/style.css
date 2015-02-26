@@ -1,4 +1,4 @@
-body{
+body {
   top: 0;
   bottom: 0;
   left: 0;
@@ -7,64 +7,104 @@ body{
   padding: 2em;
 }
 
-#wrapper{
+#wrapper {
   height: 100%;
 }
-
 /* --- Welcome message --- */
-#welcome-message{
+
+#welcome-message {
   height: 10%;
-  height: 5em;
+  height: 4em;
 }
 
-#welcome-message h1{
+#welcome-message h1 {
   margin: 0;
 }
 
-#name{
+#welcome-message .row{
+  margin: 0;
+}
+
+#logo {
+  width: 25%;
+  position: relative;
+  float: left;
+}
+
+#name {
   text-align: left;
+  position: relative;
 }
 
-#time{
+#time {
   text-align: right;
+  width: 75%;
+  position: relative;
+  float: left;
 }
-
 /* --- Tab View --- */
-#tab-view{
+/* --- Tabs --- */
+
+#tab-view {
   height: 90%;
-  height: calc(100% - 5em);
+  height: calc(100% - 4em);
 }
 
-#tabs{
+#tabs {
   width: 5%;
   height: 100%;
   position: relative;
   float: left;
 }
 
-.tab{
+.tab {
   width: 100%;
   height: 5em;
   position: relative;
   float: left;
   margin-bottom: 1em;
 }
-#tab1{
+
+#tab1 {
   background: grey;
 }
 
-#tab2{
-  background: #d0d0d0;
+#tab2 {
+  background: #b0b0b0;
 }
 
-#tab3{
-  background: #d0d0d0;
+#tab3 {
+  background: #b0b0b0;
 }
+/* --- Viewpane --- */
 
-#viewpane{
+#viewpane {
   width: 95%;
   height: 100%;
   position: relative;
   float: left;
   background: grey;
+  padding: 1em;
+}
+
+#viewpane .row {
+  height: 100%;
+  margin: 0;
+}
+
+.half-viewpane {
+  height: 100%;
+  width: calc(50% - 0.5em);
+  background-color: #d0d0d0;
+  padding: 0.5em;
+  position: relative;
+  float: left;
+}
+
+#left-viewpane {
+  margin-right: 0.5em;
+}
+
+#right-viewpane {
+  margin-left: 0.5em;
 }
