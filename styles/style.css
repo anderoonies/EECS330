@@ -65,16 +65,16 @@ body {
   margin-bottom: 1em;
 }
 
-#tab1 {
-  background: grey;
+.tab {
+  background-color: #86866B;
 }
 
 #tab2 {
-  background: #b0b0b0;
+  background-color: #DBDBAF;
 }
 
 #tab3 {
-  background: #b0b0b0;
+  background-color: #DBDBAF;
 }
 /* --- Viewpane --- */
 
@@ -83,7 +83,7 @@ body {
   height: 100%;
   position: relative;
   float: left;
-  background: grey;
+  background: #86866B;
   padding: 1em;
 }
 
@@ -95,7 +95,7 @@ body {
 .half-viewpane {
   height: 100%;
   width: calc(50% - 0.5em);
-  background-color: #d0d0d0;
+  background-color: white;
   padding: 0.5em;
   position: relative;
   float: left;
@@ -107,4 +107,25 @@ body {
 
 #right-viewpane {
   margin-left: 0.5em;
+}
+
+#tablediv {
+  height: 90%;
+  overflow: auto;
+}
+
+#plus-sign {
+  width: 2em;
+  text-align: right;
+}
+
+.tab {
+  padding: .4em;
+}
+
+.tabicon {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
