@@ -4,7 +4,8 @@
   <link rel="stylesheet" href="styles/bootstrap.css" />
   <link rel="stylesheet" href="styles/style.css" />  
   <script src="http://d3js.org/d3.v3.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/require.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="js/d3graph.js"></script>
 </head>
 
@@ -22,7 +23,7 @@
         </div>
 -->
         <div id="time">
-          <h1>12:00 pm</h1>
+          <h1 id="time-header">12:00 pm</h1>
         </div>
       </div>
     </div>
@@ -48,8 +49,18 @@
           </div>
           <div id="right-viewpane" class="half-viewpane">
               <img id="plus-sign" src="images/add121.svg"></img>
+             <div id="run-entry">
+                <div class="run-form">
+                  <h3>New run</h3>
+                  <div class="run-form-fields">
+                    Distance: <input type="text" id="run-entry-distance"><br>
+                    Time: <input type="text" id="run-entry-time"><br>
+                  </div>
+                </div>
+             </div>
              <div id="tablediv">
               <table class="table" border="1" id="itemlist">
+                <tr>
                   <td>elemetn</td>
                 </tr>
                 <tr>
@@ -81,7 +92,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </body>
