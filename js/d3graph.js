@@ -1,14 +1,5 @@
 // Adds the svg canvas
 $(document).ready(function() {
-    Date.prototype.timeNow = function () {
-     return (this.getHours() % 12 +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes()) + " " + ((this.getHours() < 12)? "am":"pm");
-    }
-    var newDate = new Date();
-
-
-
-
-
 /* ----- d3 ----- */
 
     d3.selection.prototype.position = function() {
@@ -112,7 +103,7 @@ $(document).ready(function() {
 
         itemList.selectAll("td")
                 .data(data)
-                .text(function(d){return formatTime(d.date)})
+                .text(function(d){return formatTime(d.date) + "-" + d.close + " mile run"})
                 .on("click", function(e){
                     var node = svg.selectAll('circle')
                                   .filter(function(f){return f.date == e.date})

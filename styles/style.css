@@ -15,9 +15,37 @@ input {
 #wrapper {
   height: 100%;
 }
+
+.bg-image {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: url('../images/m16.jpg');
+  background-size: cover;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.bg-layer {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  -moz-box-shadow:    inset 0 0 100px #000000;
+  -webkit-box-shadow: inset 0 0 100px #000000;
+  box-shadow:         inset 0 0 100px #000000;
+}
+
 /* --- Welcome message --- */
 
 #welcome-message {
+  color: white;
   height: 10%;
   height: 4em;
 }
@@ -68,19 +96,32 @@ input {
   position: relative;
   float: left;
   margin-bottom: 1em;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .tab {
-  background-color: #86866B;
+  background-color: #4FCDF7;
+  opacity: .7;
 }
 
-#tab2 {
+.tab.active {
+  opacity: .99;
+}
+
+.tabicon {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*#tab2 {
   background-color: #DBDBAF;
 }
 
 #tab3 {
   background-color: #DBDBAF;
-}
+}*/
 /* --- Viewpane --- */
 
 #viewpane {
@@ -88,8 +129,12 @@ input {
   height: 100%;
   position: relative;
   float: left;
-  background: #86866B;
+  background: #4FCDF7;
   padding: 1em;
+  opacity: .99;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #viewpane .row {
@@ -104,6 +149,10 @@ input {
   padding: 0.5em;
   position: relative;
   float: left;
+
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 #left-viewpane {
@@ -133,7 +182,7 @@ input {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  opacity: .9;
+  /*opacity: .9;*/
   padding-left: 10px;
 }
 
@@ -143,9 +192,14 @@ input {
   overflow: auto;
 }
 
+#plus-div {
+  position: relative;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
 #plus-sign {
   width: 2em;
-  text-align: right;
 }
 
 .tab {
@@ -162,15 +216,20 @@ input {
 /* --- d3 --- */
 
 path { 
-    stroke: steelblue;
+    stroke: black;
     stroke-width: 2;
     fill: none;
+}
+
+circle {
+  stroke: lightblue;
+  fill: lightblue;
 }
 
 .axis path,
 .axis line {
     fill: none;
-    stroke: grey;
+    stroke: gray;
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
