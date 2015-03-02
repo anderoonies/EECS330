@@ -4,19 +4,6 @@ $(document).ready(function() {
      return (this.getHours() % 12 +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes()) + " " + ((this.getHours() < 12)? "am":"pm");
     }
     var newDate = new Date();
-    console.log(newDate.timeNow());
-    console.log($('#time-header').text(newDate.timeNow()));
-    $('#plus-sign').click(function() {
-        $('#run-entry').css('display', 'inline-block');
-    });
-
-
-
-
-
-
-
-
 
 
 
@@ -92,7 +79,6 @@ $(document).ready(function() {
     // Get the data
     d3.csv("js/data.csv", function(error, data) {
         data.forEach(function(d) {
-            console.log(d);
             d.date = parseDate(d.date);
             d.close = +d.close;
         });
