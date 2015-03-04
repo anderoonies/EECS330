@@ -124,7 +124,7 @@ input {
 }*/
 /* --- Viewpane --- */
 
-#viewpane {
+.viewpane {
   width: 95%;
   height: 100%;
   position: relative;
@@ -137,7 +137,11 @@ input {
   border-bottom-left-radius: 5px;
 }
 
-#viewpane .row {
+.viewpane2 {
+  display: none;
+}
+
+.viewpane .row {
   height: 100%;
   margin: 0;
 }
@@ -153,6 +157,205 @@ input {
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
+}
+
+.eigth-viewpane {
+  
+  background-color: white;
+  position: relative;
+  float: left;
+  
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.col1 {
+  height: 100%;
+  width: 28%;
+  position: relative;
+  float: left;
+}
+
+.col2 {
+  height: 100%;
+  width: 28%;
+  position: relative;
+  float: left;
+}
+
+.col3 {
+  height: 100%;
+  width: 44%;
+  position: relative;
+  float: left;
+}
+
+.widget_header{
+  margin-left: .5em;
+  width: 95%;
+  font-size: 1.2em;
+  margin-right: 0;
+  position: relative;
+  float:left;
+  font-family: 'Gill Sans', sans-serif;
+  font-weight: 600;
+
+
+}
+
+.widget_text{
+  margin: 0;
+  width: 50%;
+  font-size: 1.2em;
+  float:left;
+
+}
+
+#water {
+  height: calc(30% - 0.5em);
+  width: calc(100% - 0.5em);
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+
+#piechart {
+  /*height: calc (60% - 0.5em);*/
+  height: 60%;
+  width: calc(100% - 1em);
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#calgraph {
+  margin-left: 0.5em;
+  width: calc(100% - 0.5em);
+  height: 60%;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#foodlist{
+  height: calc(70% - 0.5em);
+  width: calc(100% - 0.5em);
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+}
+
+#recipes1 {
+  margin-left: 0.5em;
+  width: 102%;
+  height: 38%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+}
+
+#recipes2 {
+  width: 100%;
+  height: 38%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+
+}
+
+img.water {
+  width: 85%;
+  height: 90%;
+}
+
+table.f {
+  border-radius: 3em;
+  width: 90%;
+  height: 85%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  vertical-align: middle;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+td.f {
+  text-align: center; 
+       
+}
+
+tr{
+  font-size: .9em;
+}
+
+#tot_head{
+  background-color: #E6E6E6;
+  font-size: .7em;
+}
+#tot_val{
+  background-color: #E6E6E6;
+  font-size: .9em;
+  font-weight: bold;
+}
+#subhead{
+  background-color: #878787;
+  font-size: .9em;
+  font-weight: bold;
+  color: white;
+}
+
+#left{
+  text-align: left;
+  padding-left: .5em;
+  box-shadow: 
+        inset 1px 1px 0 rgba(255,255,255,0.2), 
+        inset 1px 3px 2px rgba(255,255,255,.22), 
+        inset 1px -3px 2px rgba(0,0,0,.15), 
+        inset 1px 5px 2px rgba(255,255,255,.12);
+}
+
+#right{
+  text-align: right;
+  padding-right: .5em;
+  box-shadow: 
+        inset -1px 1px 0 rgba(255,255,255,0.2), 
+        inset -1px 3px 2px rgba(255,255,255,.22), 
+        inset -1px -3px 2px rgba(0,0,0,.15), 
+        inset -1px 5px 2px rgba(255,255,255,.12);
+
+}
+
+table.w {
+  width: 90%;
+  height: 85%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  vertical-align: middle;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+td {
+  text-align: center;
+}
+
+.suggestions{
+  margin-top: 3em;
+  margin-left: .5em;
+  width: 92%;
+}
+
+#center{
+  padding-top: .2em;
+  padding-bottom: .2em;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2em;
+}
+
+#sugg{
+  margin-left: .5em;
+  font-size: 1em;
+  font-family: Tahoma, sans-serif;
 }
 
 #left-viewpane {
@@ -193,13 +396,18 @@ input {
 }
 
 #plus-div {
+  width: 20%;
   position: relative;
   text-align: right;
   margin-bottom: 5px;
+  
+  float: right;
 }
 
 #plus-sign {
-  width: 2em;
+  width: 1.7em;
+  position: relative;
+  float: right;
 }
 
 .tab {
@@ -215,19 +423,13 @@ input {
 
 /* --- d3 --- */
 
-path { 
-    stroke: black;
-    stroke-width: 2;
-    fill: none;
-}
-
 circle {
   stroke: lightblue;
   fill: lightblue;
 }
 
-.axis path,
-.axis line {
+.axis line_path,
+.axis line_line {
     fill: none;
     stroke: gray;
     stroke-width: 1;

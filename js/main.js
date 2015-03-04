@@ -30,5 +30,15 @@ $(document).ready(function() {
     $('.tab').click(function(e) {
     	$('.tab').removeClass('active');
     	$(this).addClass('active');
+        if ($(this).attr('id')=='tab2') {
+            $('link[data-role="path"]').attr('href', '');
+            $('.viewpane1').hide();
+            $('.viewpane2').show();
+        } else if ($(this).attr('id')=='tab1') {
+            $('link[data-role="path"]').attr('href', 'styles/path.css');
+            $('.viewpane2').hide();
+            $('.viewpane1').show();
+
+        };
     })
 });

@@ -2,11 +2,14 @@
 
 <head>
   <link rel="stylesheet" href="styles/bootstrap.css" />
-  <link rel="stylesheet" href="styles/style.css" />  
+  <link rel="stylesheet" href="styles/style.css" /> 
+  <link rel="stylesheet" href="styles/path.css" data-role="path"/> 
   <script src="http://d3js.org/d3.v3.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/d3graph.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="js/googlechart.js"></script>
 </head>
 
 <body>
@@ -45,7 +48,7 @@
           <img class="tabicon" src="images/bed33.svg"></img>
         </div>
       </div>
-      <div id="viewpane">
+      <div class="viewpane viewpane1">
         <div class="row">
           <div id="left-viewpane" class="half-viewpane">
           </div>
@@ -94,6 +97,142 @@
               </table>
             </div>
           </div>
+        </div>
+      </div>
+       <div class="viewpane viewpane2">
+        <div class="row">
+          <div class = "col1">
+          <div id="foodlist" class="eigth-viewpane">
+              <div class = "widget_header"> 
+                TODAY'S FOOD 
+                <p id="plus-div">
+                  <img id="plus-sign" src="images/add121.svg"></img>
+                </p>
+              </div>
+              <table class = "f">
+                <tr id = "tot_head">
+                  <td class = "f"> Goal </td>
+                  <td class = "f"> </td>
+                  <td class = "f"> Food </td>
+                  <td class = "f"> </td>
+                  <td class = "f"> Exercise </td>
+                  <td class = "f"> </td>
+                  <td class = "f"> Remaining </td>
+                </tr>
+                <tr id="tot_val">
+                  <td class = "f"> 1890 </td>
+                  <td class = "f"> - </td>
+                  <td class = "f"> 892 </td>
+                  <td class = "f"> + </td>
+                  <td class = "f"> 369 </td>
+                  <td class = "f"> = </td>
+                  <td class = "f" > <font color ="#33CC33"> 1367 </font></td>
+                </tr>
+
+                <tr id="subhead">
+                  <td id = "left" class = "f" colspan = "4"> Breakfast </td>
+                  <td id = "right" class = "f" colspan = "3"> 340 cal </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Breakfast Potatoes </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 85 </font> </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Sausage Links </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 167 </font> </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Orange Juice </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 88 </font> </td>
+                </tr>
+                <tr id="subhead">
+                  <td id = "left" class = "f" colspan = "4"> Lunch </td>
+                  <td id = "right" class = "f" colspan = "3"> 392 cal </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Turkey Sandwich </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 250 </font> </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Garden Veggie Crisps </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 110 </font> </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Coffee </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 4 </font> </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Lowfat 1% Milk </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 28 </font> </td>
+                </tr>
+                <tr id="subhead">
+                  <td id = "left" class = "f" colspan = "4"> Dinner </td>
+                  <td id = "right" class = "f" colspan = "3"> 0 cal </td>
+                </tr>
+                <tr id="subhead">
+                  <td id = "left" class = "f" colspan = "4"> Snacks </td>
+                  <td id = "right" class = "f" colspan = "3"> 160 cal </td>
+                </tr>
+                <tr>
+                  <td id = "left" class = "f" colspan = "4"> Luna Bar - PB Cookie </td>
+                  <td id = "right" class = "f" colspan = "3"> <font color = "#4FCDF7"> 160 </font> </td>
+                </tr>
+
+
+              </table>
+          </div>
+  
+          <div id ="water" class="eigth-viewpane"> 
+            <div class = "widget_header"> WATER </div>
+            <table class = "w"> 
+              <tr>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+              </tr>
+
+              <tr>
+                 <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+                <td class = "w"> <img class = "water" src="images/water42.svg"></img> </td>
+              </tr>
+
+            </table>
+
+          </div>
+        </div>
+
+
+         <div class = "col2">
+          <div id="piechart" class="eigth-viewpane">
+            <div class = "widget_header"> CALORIE BREAKDOWN </div>
+            <div id="chart_div"></div>
+          </div>
+          <div id = "recipes1" class = "eigth-viewpane">
+            <div class = "widget_header"> WHAT'S MISSING? </div> 
+            <div class = "suggestions">
+            <div id="sugg"> <font color= "#878787"> You need more: </font></div>
+            <div id = "center"> <font color ="#33CC33"> VITAMIN K </font> </div>
+            <div id="sugg"> <font color= "#878787"> Try eating: </font> </div>
+            <div id = "center"> <font color ="#33CC33"> BROCCOLI </font> </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class = "col3">
+          <div id="calgraph" class="eigth-viewpane">
+             <div id="tablediv"> <div class = "widget_header"> WEIGHT GRAPH </div>
+            </div>
+          </div>
+          <div id = "recipes2" class = "eigth-viewpane"> 
+            <div class = "widget_header"> RECIPES </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
