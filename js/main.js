@@ -29,16 +29,29 @@ $(document).ready(function() {
 
     $('.tab').click(function(e) {
     	$('.tab').removeClass('active');
+        d3.selectAll('svg').remove();
     	$(this).addClass('active');
         if ($(this).attr('id')=='tab2') {
             $('link[data-role="path"]').attr('href', '');
             $('.viewpane1').hide();
-            $('.viewpane2').show();
+            $('.viewpane3').hide();
+            $('.viewpane2').show();            
         } else if ($(this).attr('id')=='tab1') {
             $('link[data-role="path"]').attr('href', 'styles/path.css');
             $('.viewpane2').hide();
+            $('.viewpane3').hide();
             $('.viewpane1').show();
-
+            $('.viewpane1').ready(function(){
+                loadData();
+            })
+        } else if ($(this).attr('id')=='tab3') {
+            $('link[data-role="path"]').attr('href', 'styles/path.css');
+            $('.viewpane2').hide();
+            $('.viewpane3').show();
+            $('.viewpane1').hide();
+            $('.viewpane3').ready(function(){
+                loadData();
+            })
         };
     })
 });
