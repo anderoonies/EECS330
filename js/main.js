@@ -1,9 +1,20 @@
+var m_names = new Array("Jan", "Feb", "Mar", 
+"Apr", "May", "Jun", "Jul", "Aug", "Sep", 
+"Oct", "Nov", "Dec");
+
 $(document).ready(function() {
     Date.prototype.timeNow = function () {
      return (this.getHours() % 12 +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes()) + " " + ((this.getHours() < 12)? "am":"pm");
     }
 
     var newDate = new Date().timeNow();
+
+    var d = new Date();
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth();
+    var curr_year = d.getFullYear();
+    curr_year = curr_year.toString().substr(2,2);
+
 
     $('#time-header').text(newDate);
 
@@ -26,6 +37,13 @@ $(document).ready(function() {
             $('#run-entry').css('display', 'none');
         }
     });
+
+    $('#submit').click(function(e) {
+        miles.push(parseInt($('#run-entry-distance').val()));
+        run_dates.push(curr_date + "-" + m_names[curr_month] + '-' + curr_year);
+        d3.selectAll('svg').remove();
+        loadData();
+    })
 
     $('.tab').click(function(e) {
         d3.selectAll('svg').remove();

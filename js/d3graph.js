@@ -1,3 +1,12 @@
+hours = [7, 6.5, 8.0, 7.6, 6.5, 7.70, 7.00, 7.28, 6.70, 9.1, 8.5, 7.98, 8.44, 7.34, 7.70, 7.13, 7.9, 8.2, 7.23, 6.77, 6.20, 6.44];
+sleep_dates = ['31-Apr-12','30-Apr-12','29-Apr-12','28-Apr-12','27-Apr-12','26-Apr-12','25-Apr-12','24-Apr-12','23-Apr-12','22-Apr-12','21-Apr-12','20-Apr-12','19-Apr-12','18-Apr-12','17-Apr-12','16-Apr-12','15-Apr-12','14-Apr-12','13-Apr-12','12-Apr-12','11-Apr-12','10-Apr-12'];
+
+miles = [8.98, 8.00, 7.70, 7.00, 7.28, 6.70, 7.98, 8.44, 7.34, 7.70, 7.13, 7.23, 6.77, 6.20, 6.44];
+run_dates = ['30-Feb-12', '27-Feb-12', '26-Feb-12', '25-Feb-12', '24-Feb-12', '23-Feb-12', '20-Feb-12', '19-Feb-12', '18-Feb-12', '17-Feb-12', '16-Feb-12', '13-Feb-12', '12-Feb-12', '11-Feb-12', '10-Feb-12']
+
+
+
+
 function loadData() {
         /* ----- d3 ----- */
 
@@ -15,7 +24,8 @@ function loadData() {
             }
 
             return {
-                top: elPos.top - vpPos.top,
+                top: elPos.top - vpPos.top
+                ,
                 left: elPos.left - vpPos.left,
                 width: elPos.width,
                 bottom: elPos.bottom - vpPos.top,
@@ -69,19 +79,23 @@ function loadData() {
 
         var itemList = d3.selectAll('#itemlist')
         // Get the data
+        var data=[]; 
         if ($('#tab1').hasClass('active')) {
-            var data = "js/data.csv"
+            for(var i=0; i<run_dates.length; i++){
+                var obj = {date: run_dates[i], close: miles[i]};
+                data.push(obj);
+            }
         } else {
-            var data = "js/data2.csv"
+            for(var i=0; i<sleep_dates.length; i++){
+                var obj = {date: sleep_dates[i], close: hours[i]};
+                data.push(obj);
+            }
         }
 
-        console.log(data);
-
-        d3.csv(data, function(error, data) {
-            data.forEach(function(d) {
-                d.date = parseDate(d.date);
-                d.close = +d.close;
-            });
+        data.forEach(function(d) {
+            d.date = parseDate(d.date);
+            d.close = +d.close;
+        });
 
             // Scale the range of the data
             x.domain(d3.extent(data, function(d) { return d.date; }));
@@ -137,7 +151,6 @@ function loadData() {
                             .duration(200)
                             .style("opacity", .0);
                     })
-        });
 }
 
 $(document).ready(function () {
