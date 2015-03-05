@@ -24,11 +24,12 @@ function loadData() {
             };
 
         };
-        
+
+        console.log($('#left-viewpane').width(), $('#left-viewpane').height());
         // Set the dimensions of the canvas / graph
         var margin = {top: 30, right: 20, bottom: 30, left: 50},
-            width = $('#left-viewpane').width() - margin.left - margin.right,
-            height = $('#left-viewpane').height() - margin.top - margin.bottom;
+            width = 491 - margin.left - margin.right,
+            height = 459 - margin.top - margin.bottom;
 
         // Parse the date / time
         var parseDate = d3.time.format("%d-%b-%y").parse,
@@ -74,11 +75,15 @@ function loadData() {
             var data = "js/data2.csv"
         }
 
+        console.log(data);
+
         d3.csv(data, function(error, data) {
             data.forEach(function(d) {
                 d.date = parseDate(d.date);
                 d.close = +d.close;
             });
+
+            console.log(data);
 
             // Scale the range of the data
             x.domain(d3.extent(data, function(d) { return d.date; }));
@@ -116,7 +121,7 @@ function loadData() {
                             return formatTime(d.date) + "-" + d.close + " hours of sleep"
                         }
                     })
-                    .on("click", function(e){
+                    .on("mouseenter", function(e){
                         var node = svg.selectAll('circle')
                                       .filter(function(f){return f.date == e.date})
                                       .attr('fill', 'red')
@@ -128,7 +133,12 @@ function loadData() {
                             .style("left", node[0][0].getBoundingClientRect().left + "px")     
                             .style("top", node[0][0].getBoundingClientRect().top -28 + "px");    
 
-                    }) 
+                    })
+                    .on("mouseleave", function(e){
+                        div.transition()
+                            .duration(200)
+                            .style("opacity", .0);
+                    })
         });
 }
 
