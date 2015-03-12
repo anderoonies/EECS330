@@ -52,10 +52,12 @@ function loadData() {
 
         // Define the axes
         var xAxis = d3.svg.axis().scale(x)
-            .orient("bottom").ticks(5);
+            .orient("bottom")
+            .ticks(5);
 
         var yAxis = d3.svg.axis().scale(y)
-            .orient("left").ticks(5);
+            .orient("left")
+            .ticks(5);
 
         // Define the line
         var valueline = d3.svg.line()
@@ -69,6 +71,21 @@ function loadData() {
             .append("g")
                 .attr("transform", 
                       "translate(" + margin.left + "," + margin.top + ")");
+
+        svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "end")
+            .attr("x", width)
+            .attr("y", height - 6)
+            .text("Date");
+
+        svg.append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", 6)
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text("Distance (miles)");
 
         var div = d3.select('body').append("div")   
             .attr("class", "tooltip")
