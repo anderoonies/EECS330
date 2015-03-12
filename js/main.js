@@ -61,6 +61,7 @@ $(document).ready(function() {
             $('.viewpane1').hide();
             $('.viewpane3').hide();
             $('.viewpane2').show();
+            drawChart();
         } else if ($(this).attr('id')=='tab3') {
             $('link[data-role="path"]').attr('href', 'styles/path.css');
             $('.viewpane1').hide();
